@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+
+    <!-- Datos de prueba sobre actas de proyecto -->
+
+    <record id="actaProyecto1" model="project_pmbok.ActaDeProyecto">
+            <field name="name">Acta del proyecto_1 de la organizacion</field>
+            <field name="estadoDocumento">draft</field>
+            <field name="projectTitle">Proyecto para el desarrollo de una aplicacion móvil</field>
+            <field name="datePrepared">2022-01-01</field>
+            <field name="projectManager">Jefe de proyecto</field>
+            <field name="projectPurpose">Proposito del proyecto</field>
+            <field name="highLevelProjectDescription">Desarrollo de una aplicacion movil</field>
+
+            <field name="stakeHolders" eval=[ref('interesado1'), ref('interesado2')]/>
+            <field name="projectObjetives" eval=[ref('objetivo1'), ref('objetivo2')]/>
+            <field name="summaryMilestones" eval=[ref('hito1')]/>
+   
+    </record>
+
+    <!-- Datos de prueba sobre interesados -->
+
+    <record id="interesado1" model="project_pmbok.Interesado">
+            <field name="mombre">Interesado_1 del proyecto 1</field>
+            <field name="actaproyecto_id" ref="actaProyecto1"/>
+    </record>
+    <record id="interesado2" model="project_pmbok.Interesado">
+            <field name="name">Interesado_2 del proyecto 1</field>
+            <field name="actaproyecto_id" ref="actaProyecto1"/>
+    </record>
+
+    <!-- Datos de prueba sobre objetivos de proyecto -->
+
+    <record id="objetivo1" model="project_pmbok.ObjetivoProyecto">
+            <field name="mombre">Objetivo_1 del proyecto 1</field>
+            <field name="descripcion">Implementacion de modulo#</field>
+            <field name="actaproyecto_id" ref="actaProyecto1"/>
+    </record>
+    <record id="objetivo2" model="project_pmbok.ObjetivoProyecto">
+            <field name="name">Objetivo_2 del proyecto 1</field>
+            <field name="descripcion">Obtener conocimiento sobre tecnologias#</field>
+            <field name="actaproyecto_id" ref="actaProyecto1"/>
+    </record>
+    
+
+    <!-- Datos de prueba sobre hitos de proyecto -->
+
+    <record id="hito1" model="project_pmbok.HitoProyecto">
+            <field name="mombre">Hito_1 del proyecto 1</field>
+            <field name="descripcion">Documento con la descomposicion en tareas WBS</field>
+            <field name="fechaHito">2022-02-01</field>
+            <field name="actaproyecto_id" ref="actaProyecto1"/>
+    </record>
+
+    </data>
+</odoo>

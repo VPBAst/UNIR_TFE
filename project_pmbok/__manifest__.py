@@ -21,15 +21,16 @@
     # any module necessary for this one to work correctly
     'depends': ['base'],
 
-    # always loaded
+    # Datos cargados al inicio del modulo
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'data/datos_proyectos_pmbok.xml', 
     ],
-    # only loaded in demonstration mode
+    # Datos cargados para el modo prueba de Odoo
     'demo': [
-        'demo/demo.xml',
+        'demo/datos_prueba.xml',
     ],
     # aplicacion:  conjunto de modulos, con una funcionalidad mayor
     #'application': True,
